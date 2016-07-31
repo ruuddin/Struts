@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<web-app>
+	<servlet> 
+		<servlet-name>MyFirstServlet</servlet-name> 
+		<servlet-class>MyFirstServlet</servlet-class>
+	</servlet> 
+  	<servlet-mapping> 
+  		<servlet-name>MyFirstServlet</servlet-name> 
+  		<url-pattern>/MyFirst</url-pattern> 
+  	</servlet-mapping> 
+    <display-name>My First Servlet</display-name>
+    <filter>
+        <filter-name>DispatcherFilter</filter-name>
+        <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+		<init-param>
+			<param-name>config</param-name>
+			<param-value>struts-default.xml,struts2/struts2-alm.xml</param-value>
+		</init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>DispatcherFilter</filter-name>
+        <url-pattern>/*.action</url-pattern>
+    </filter-mapping>
+</web-app>    
+
+
+
